@@ -6,17 +6,17 @@ export class View {
             this.elemento = elemento;
         }
         else {
-            throw Error(`Seletor ${seletor} não existe no DOM. Verifique! `);
+            throw Error(`Seletor ${seletor} não existe no DOM. Verifique`);
         }
         if (escapar) {
             this.escapar = escapar;
-            seletor;
         }
     }
     update(model) {
         let template = this.template(model);
-        if (this.escapar == true) {
-            template = template.replace(/<script>[\s\S]*?<\/script>/, '');
+        if (this.escapar) {
+            template = template
+                .replace(/<script>[\s\S]*?<\/script>/, '');
         }
         this.elemento.innerHTML = template;
     }
