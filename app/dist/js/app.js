@@ -17,3 +17,4 @@ if (botaoImporta) {
 else {
     throw Error('Botão não foi encontrado!');
 }
+//# sourceMappingURL=app.js.map
